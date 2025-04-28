@@ -1,16 +1,15 @@
-import { useState } from "react";
 import Input from "./Input";
 import { InputField } from "./types";
 
-function InputSection({ sectionId, initialInputs }: { sectionId: number, initialInputs: InputField[] })
+interface InputSectionProps
 {
-    const [inputs, setInputs] = useState<InputField[]>(initialInputs);
+    sectionId: number;
+    inputs: InputField[];
+    onInputChange: (sectionId: number, inputFieldId: number, newValue: string) => void;
+}
 
-    function inputChangeHandler(id: number, newValue: string)
-    {
-        setInputs(prevValues => prevValues.map(input => input.id === id ? { ...input, value: newValue } : input));
-    }
-
+function InputSection({ sectionId, inputs, onInputChange }: InputSectionProps)
+{
     return (
         <div>
             {inputs.map(input =>
@@ -18,7 +17,8 @@ function InputSection({ sectionId, initialInputs }: { sectionId: number, initial
                     labelValue={input.label}
                     inputValue={input.value}
                     inputId={input.id}
-                    onInputChange={inputChangeHandler}
+                    sectionId={sectionId}
+                    onInputChange={onInputChange}
                 />)}
         </div>
     )

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import InputSection from "./InputSection";
 import { InputField } from "./types";
 
@@ -21,11 +22,25 @@ const section3Inputs: InputField[] = [
 
 function App()
 {
+  const [inputs, setInputs] = useState<InputField[][]>([section1Inputs, section2Inputs, section3Inputs]);
+
+  function inputChangeHandler(sectionId: number, inputFieldId: number, newValue: string)
+  {
+    setInputs(prevValue => prevValue.map((sec, secId) =>
+    {
+      if (secId === sectionId)
+      {
+        return sec.map(input => input.id === inputFieldId ? { ...input, value: newValue } : input);
+      }
+      return sec;
+    }));
+  }
+
   return (
     <div>
-      <InputSection sectionId={1} initialInputs={section1Inputs} />
-      <InputSection sectionId={2} initialInputs={section2Inputs} />
-      <InputSection sectionId={3} initialInputs={section3Inputs} />
+      <InputSection sectionId={0} inputs={inputs[0]} onInputChange={inputChangeHandler} />
+      <InputSection sectionId={1} inputs={inputs[1]} onInputChange={inputChangeHandler} />
+      <InputSection sectionId={2} inputs={inputs[2]} onInputChange={inputChangeHandler} />
     </div>
   )
 }
