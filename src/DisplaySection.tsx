@@ -6,21 +6,21 @@ import WorkInfo from "./WorkInfo";
 function DisplaySection({ inputs }: { inputs: InputField[][] })
 {
     return (
-        <div>
+        <div className="display-section">
             <PersonalInfo
                 name={inputs[0][0].value}
                 surname={inputs[0][1].value}
                 email={inputs[0][2].value}
                 phone={inputs[0][3].value}
                 address={inputs[0][4].value}
-                github={inputs[0][5].value}
-                linkedin={inputs[0][6].value}
             />
+
             <EducationInfo
                 startDate={inputs[1][0].value}
                 endDate={inputs[1][1].value}
                 location={inputs[1][2].value}
                 degree={inputs[1][3].value}
+                school={inputs[1][4].value}
             />
 
             <WorkInfo

@@ -10,13 +10,21 @@ interface WorkInfoProps
 function WorkInfo({ startDate, endDate, location, company, position }: WorkInfoProps)
 {
     return (
-        <div>
+        <div className="work-info">
             <h2>Work experience</h2>
             <div>
-                <p>{startDate} - {endDate}</p>
-                <p>{location}</p>
-                <p>{company}</p>
-                <p>{position}</p>
+                <div>
+                    {
+                        (startDate && endDate) ?
+                            <p>{startDate} - {endDate}</p>
+                            : null
+                    }
+                    <p>{location}</p>
+                </div>
+                <div>
+                    <p className="work-company">{company}</p>
+                    <p className="work-position">{position}</p>
+                </div>
             </div>
         </div>
     )

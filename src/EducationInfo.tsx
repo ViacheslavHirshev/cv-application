@@ -4,19 +4,29 @@ interface EducationInfoProps
     endDate: string;
     location: string;
     degree: string;
+    school: string;
 }
 
-function EducationInfo({ startDate, endDate, location, degree }: EducationInfoProps)
+function EducationInfo({ startDate, endDate, location, degree, school }: EducationInfoProps)
 {
     return (
-        <div>
+        <div className="education-info">
             <h2>Education</h2>
             <div>
-                <p>{startDate} - {endDate}</p>
-                <p>{location}</p>
-                <p>{degree}</p>
+                <div>
+                    {
+                        (startDate && endDate) ?
+                            <p>{startDate} - {endDate}</p>
+                            : null
+                    }
+                    <p>{location}</p>
+                </div>
+                <div>
+                    <p className="education-school">{school}</p>
+                    <p className="education-degree">{degree}</p>
+                </div>
             </div>
-        </div>
+        </div >
     )
 }
 

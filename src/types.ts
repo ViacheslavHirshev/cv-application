@@ -2,5 +2,6 @@ export interface InputField
 {
     label: string,
     value: string,
-    id: number
+    id: number,
+    inputType: "text" | "date" | "email",
 }

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Merienda:wght@300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    font-size: 16px;
+
+    --input-section-clr: #fff2c2;
+    --cv-display-main-clr: #fff;
+}
+
+body {
+    height: 100vh;
+    background-color: #eff3ea;
+}
+
+header {
+    padding: 2rem;
+    background-color: #d9dfc6;
+    font-size: 1.3rem;
+}
+
+header h1 {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+main {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 90rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.input-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-section {
+    background-color: var(--input-section-clr);
+    border-radius: 25px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-section-closed {
+    background-color: var(--input-section-clr);
+    border-radius: 25px;
+    padding: 2rem;
+}
+
+.input-section-closed h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.input-field input {
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.3rem;
+}
+
+.display-section {
+    grid-column: 2 / 3;
+    height: 1000px;
+    background-color: var(--cv-display-main-clr);
+}
+
+.personal-info {
+    padding: 2rem;
+    background-color: #faebd7;
+}
+
+.personal-info h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.personal-info div {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.education-info {
+    padding: 2.5rem;
+}
+
+.education-info h2 {
+    font-size: 2rem;
+    text-align: center;
+    background-color: #d9eafd;
+    padding: 1rem 0;
+}
+
+.education-info>div {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 5rem;
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.education-info>div>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.education-school {
+    font-weight: bold;
+}
+
+.education-degree {
+    font-style: italic;
+}
+
+.work-info {
+    padding: 2.5rem;
+}
+
+.work-info h2 {
+    padding: 1rem 0;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #d9eafd;
+}
+
+.work-info>div {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 5rem;
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.work-info>div>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.work-company {
+    font-weight: bold;
+}
+
+.work-position {
+    font-style: italic;
+}
+
+.open-icon {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.open-icon-closed {
+    transform: rotate(0deg);
+}
+
+.open-icon-opened {
+    transform: rotate(180deg);
+}
